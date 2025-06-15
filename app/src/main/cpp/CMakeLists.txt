@@ -11,6 +11,9 @@ cmake_minimum_required(VERSION 3.22.1)
 # build script scope).
 project("real-time-edge-detection")
 
+# Include OpenCV headers
+include_directories(${CMAKE_SOURCE_DIR}/include)
+
 # Creates and names a library, sets it as either STATIC
 # or SHARED, and provides the relative paths to its source code.
 # You can define multiple libraries, and CMake builds them for you.
@@ -28,6 +31,11 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
         native-lib.cpp)
 
+# Link OpenCV libraries
+add_library(opencv_java4 SHARED IMPORTED)
+set_target_properties(opencv_java4
+        PROPERTIES IMPORTED_LOCATION
+        ${CMAKE_SOURCE_DIR}/../jniLibs/libs/${CMAKE_ANDROID_ARCH_ABI}/libopencv_java4.so)
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
 # build script, prebuilt third-party libraries, or Android system libraries.
