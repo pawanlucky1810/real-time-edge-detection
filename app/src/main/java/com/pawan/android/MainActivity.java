@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
     // Used to load the 'android' library on application startup.
     static {
-        System.loadLibrary("android");
+        System.loadLibrary("real-time-edge-detection");
     }
 
     private ActivityMainBinding binding;
