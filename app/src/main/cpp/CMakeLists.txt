@@ -36,6 +36,8 @@ add_library(opencv_java4 SHARED IMPORTED)
 set_target_properties(opencv_java4
         PROPERTIES IMPORTED_LOCATION
         ${CMAKE_SOURCE_DIR}/../jniLibs/libs/${CMAKE_ANDROID_ARCH_ABI}/libopencv_java4.so)
+
+set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--exclude-libs,libc++_static.a")
 # Specifies libraries CMake should link to your target library. You
 # can link libraries from various origins, such as libraries defined in this
 # build script, prebuilt third-party libraries, or Android system libraries.
