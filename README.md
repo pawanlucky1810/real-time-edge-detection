@@ -30,3 +30,14 @@ Please view the demo video [here](demo_video.mp4).
 > Used `Android Studio` for this project development.
 > Followed the Android developer guide https://developer.android.com/ndk/guides for developing this project. This gave me a boilerplate NDK project.
 > Followed the OpenCV on Android guide https://docs.opencv.org/4.x/d5/df8/tutorial_dev_with_OCV_on_Android.html
+
+- Go to your `Android Studio` and Open this project `File -> New -> Project from Version Control...`
+- Provide the link to this repo and add the project. Let the project build.
+- Make sure you have `NDK` and `CMake` is installed in your Android Studio
+  > Go `Tools -> SDK Manager -> SDK Tools` and checkbox the `NDK` and `CMake` tools and Apply.
+- `OpenCV` dependencies are statically added in this project. And `CMakeLists.txt` already links my `native-lib.cpp` code with `OpenCV` dependencies.
+
+## Architecture overview
+Below is the high level architecture:
+
+![Architecture](high_level_arch.jpg)
