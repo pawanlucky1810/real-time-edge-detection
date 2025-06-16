@@ -20,3 +20,13 @@ Implemented the toggle button option to switch between raw feed and processed im
 
 ### 5 Added FPS counter
 Added a frame processing `TextView` to display the FPS both with raw feed and processed feed.
+
+# Demo video
+Please view the demo video [here](demo_video.mp4).
+
+## Setup Instruction
+
+**References Used for Development:**
+> Used `Android Studio` for this project development.
+> Followed the Android developer guide https://developer.android.com/ndk/guides for developing this project. This gave me a boilerplate NDK project.
+> Followed the OpenCV on Android guide https://docs.opencv.org/4.x/d5/df8/tutorial_dev_with_OCV_on_Android.html
