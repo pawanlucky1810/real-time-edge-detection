@@ -3,3 +3,14 @@ Minimal Android app that captures camera frames, processes
 them using OpenCV in C++ (via JNI), and displays the processed output using  OpenGL ES.
 
 ## Features Implemented
+### 1 Camera Feed Integration
+Implemented the Camera frames capture using `Camera2 API` and `SurfaceTexture`view.
+
+### 2 Frame Processing via OpenCV (C++)
+- Each frame is sent to native C++ code using JNI interface.
+- C++ code applies Grayscale filter to convert `RBGA` image to Gray and then applies the `Canny Edge Detection`
+- Convert back the Gray image to `RGBA` and return the image for rendering.
+
+### 3 Render Output with OpenGL ES
+- Render the processed image using OpenGL ES 2.0 (as a texture).
+- Smooth frame rate is maintained.
