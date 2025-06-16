@@ -26,7 +26,7 @@ Please view the demo video [here](demo_video.mp4).
 
 ## Setup Instruction
 
-### References Used for Development:**
+### References Used for Development:
 > Used `Android Studio` for this project development.
 > Followed the Android developer guide https://developer.android.com/ndk/guides for developing this project. This gave me a boilerplate NDK project.
 > Followed the OpenCV on Android guide https://docs.opencv.org/4.x/d5/df8/tutorial_dev_with_OCV_on_Android.html
