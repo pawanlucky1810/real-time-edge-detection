@@ -54,6 +54,7 @@ public class MainActivity extends
     private long lastFrameTime;
 
     private ImageView processedImageView;
+
     //    @Override
 //    protected void onCreate(Bundle savedInstanceState) {
 //        super.onCreate(savedInstanceState);
