@@ -14,3 +14,9 @@ Implemented the Camera frames capture using `Camera2 API` and `SurfaceTexture`vi
 ### 3 Render Output with OpenGL ES
 - Render the processed image using OpenGL ES 2.0 (as a texture).
 - Smooth frame rate is maintained.
+
+### 4 Toggle between Raw Feed and Edge detected output
+Implemented the toggle button option to switch between raw feed and processed image feed.
+
+### 5 Added FPS counter
+Added a frame processing `TextView` to display the FPS both with raw feed and processed feed.
