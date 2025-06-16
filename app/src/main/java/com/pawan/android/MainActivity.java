@@ -44,6 +44,7 @@ public class MainActivity extends
     private boolean showEdges = false;
 
     private GLSurfaceView glSurfaceView;
+    private GLRenderer glRenderer;
 
     private CameraDevice cameraDevice;
     private CameraCaptureSession captureSession;
@@ -87,7 +88,12 @@ public class MainActivity extends
         textureView = findViewById(R.id.textureView);
         toggleEdge = findViewById(R.id.toggleEdges);
         fpsText = findViewById(R.id.fpsText);
-        processedImageView = findViewById(R.id.processingImageView);
+        // processedImageView = findViewById(R.id.processingImageView);
+        glSurfaceView = findViewById(R.id.glSurfaceView);
+        glSurfaceView.setEGLContextClientVersion(2);
+        glRenderer = new GLRenderer(this);
+        glSurfaceView.setRenderer(glRenderer);
+        glSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
 
         toggleEdge.setOnCheckedChangeListener((buttonView, isChecked) -> showEdges = isChecked);
 
@@ -126,7 +132,7 @@ public class MainActivity extends
             lastFrameTime = currentTime;
 
             if(!showEdges) {
-                processedImageView.setVisibility(View.GONE);
+                glSurfaceView.setVisibility(View.GONE);
                 return;
             }
             if (showEdges) {
@@ -143,8 +149,11 @@ public class MainActivity extends
                 Bitmap resultBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
                 resultBitmap.copyPixelsFromBuffer(ByteBuffer.wrap(resultData));
                 runOnUiThread(() -> {
-                    processedImageView.setImageBitmap(resultBitmap);
-                    processedImageView.setVisibility(View.VISIBLE);
+                    glRenderer.setBitmap(resultBitmap);
+                    glSurfaceView.requestRender();
+                    glSurfaceView.setVisibility(View.VISIBLE);
+//                    processedImageView.setImageBitmap(resultBitmap);
+//                    processedImageView.setVisibility(View.VISIBLE);
                 });
             }
         }
