@@ -13,7 +13,7 @@ Java_com_pawan_android_ImageTransformer_stringFromJNI(
 }
 extern "C"
 JNIEXPORT jbyteArray JNICALL
-Java_com_pawan_android_ImageTransformer_transformImage(JNIEnv *env, jobject /* this */,
+Java_com_pawan_android_ImageTransformer_transformImage(JNIEnv *env, jobject thiz,
                                                                            jbyteArray image_data,
                                                                            jint width, jint height) {
 

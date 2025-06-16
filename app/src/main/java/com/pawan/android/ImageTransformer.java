@@ -4,6 +4,7 @@ public class ImageTransformer {
 
     // Used to load the 'real-time-edge-detection' library on application startup.
     static {
+        System.loadLibrary("opencv_java4");
         System.loadLibrary("real-time-edge-detection");
     }
     /**
