@@ -26,11 +26,18 @@ Please view the demo video [here](demo_video.mp4).
 
 ## Setup Instruction
 
-**References Used for Development:**
+### References Used for Development:**
 > Used `Android Studio` for this project development.
 > Followed the Android developer guide https://developer.android.com/ndk/guides for developing this project. This gave me a boilerplate NDK project.
 > Followed the OpenCV on Android guide https://docs.opencv.org/4.x/d5/df8/tutorial_dev_with_OCV_on_Android.html
 
+### Project Structure
+I am following the default project structure provide by Android Studio Native C boilerplate project.
+- The entire codebase is inside `app/` directory.
+- `Java` codebase is inside `app/src/main/java`. This includes codes for `MainActivity`, `JNI` interface `ImageTransformer` and `GLRenderer` to render the output using `OpenGL ES2.0`.
+- `C++` code for edge detection and `OpenCV` dependencies are part of `src/main/cpp`.
+
+### Steps
 - Go to your `Android Studio` and Open this project `File -> New -> Project from Version Control...`
 - Provide the link to this repo and add the project. Let the project build.
 - Make sure you have `NDK` and `CMake` is installed in your Android Studio
